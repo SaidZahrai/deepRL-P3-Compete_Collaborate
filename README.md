@@ -1,10 +1,6 @@
 # Project 3 in Udacity Reinformcement Learning Nanodegree: 
 
-In this project, we are working with [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment and set up an agent that learns to control a two-armed robot to follow a target in the environemnt. This repository has the model and the code for training the agent as well as data for a trained agent.
-
-<figure class="image" style="display:inline-block">
-  <img src="./figs/simulation.png" width="400" class="center"/>
-</figure>
+In this project, we are working with [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment.
 
 ## Introduction
 
@@ -12,12 +8,8 @@ In this environment, two agents control rackets to bounce a ball over a net. If 
 
 The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
-
-In this project, there are two options to choose from. The environment can contain one single robot, or a collection of 20 robots. In the first case, the agent will control the single robot, while in the second case, all robots are controlled. This repository presents a solution for option 2, with 20 agents.
-
-We have an episodic task. After each episode, the rewards that each agent has received are added up, which yields 20 scores. Average of these values will be the score for each episode. The environment is considered solved, when the average over 100 episodes of those average scores is at least 30. During training the data from all agents are collected and used for training.
-
-The observation space consists of 33 real-valued variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four real numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be between -1 and 1. Thus, we have an episodic, continuous control problem to solve.
+The task is episodic, and to solve the environment, the agents must get an average score of +0.5 over 100 consecutive episodes.
+In each episode, we add up the rewards for each agent and get a final score for each agent. This yields 2 scores, maximum of which will be consider as the result of the episode. The environment is considered solved, when the average over 100 episodes is at least +0.5.
 
 ## Solution method
 
@@ -100,8 +92,6 @@ where `xyz` will show which case it concerns about.
 
 Once the environment is solved, the result is presented as a graph that shows the scores at each episode and the average over 100 episodes. The figure below shows a typical output if you train the agents:
 
-<br/><br/>
-
 <figure class="image" style="display:inline-block">
     <center> Training with noise added to actions </center>
   <img src="./figs/simple.png" width="400" class="center"/>
@@ -111,7 +101,6 @@ Once the environment is solved, the result is presented as a graph that shows th
 The weights are stored every 10 steps in two checkpoint files `checkpoint_actor.pth` and `checkpoint_critic.pth`.
 
 ### 2. Testing the agent
-<br/><br/>
 
 If you choose to test in the first cell, you will have typically such an output:
 <figure class="image" style="display:inline-block">
