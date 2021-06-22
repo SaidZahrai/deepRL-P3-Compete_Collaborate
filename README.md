@@ -88,6 +88,7 @@ Every 100 episodes the results are stored in 4 files with the names
 2. `xyz_maddpg_2_checkpoint_actor.pth`
 3. `xyz_maddpg_1_checkpoint_critic.pth`
 4. `xyz_maddpg_2_checkpoint_critic.pth`
+
 where `xyz` will show which case it concerns about.
 
 Once the environment is solved, the result is presented as a graph that shows the scores at each episode and the average over 100 episodes. The figure below shows a typical output if you train the agents:
@@ -97,8 +98,6 @@ Once the environment is solved, the result is presented as a graph that shows th
   <img src="./figs/simple.png" width="400" class="center"/>
 </figure>
 
-
-The weights are stored every 10 steps in two checkpoint files `checkpoint_actor.pth` and `checkpoint_critic.pth`.
 
 ### 2. Testing the agent
 
